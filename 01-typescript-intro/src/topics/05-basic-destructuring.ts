@@ -1,12 +1,11 @@
-interface AudioPlayer {
+interface AudioPlayer{
     audioVolume: number;
     songDuration: number;
     song: string;
     details: Details;
 }
 
-
-interface Details {
+interface Details{
     author: string;
     year: number;
 }
@@ -16,19 +15,19 @@ const audioPlayer: AudioPlayer = {
     songDuration: 36,
     song: "Mess",
     details: {
-        author: "Ed Sheeran",
+        author: 'Ed Sheeran',
         year: 2015
-    }
+    } 
 }
 
-// const { song: anotherSong, songDuration: duration } = audioPlayer;
-// const { author } = audioPlayer.details
-// console.log('Song: ', anotherSong, ', Duration:', duration, ', Author: ', author);
+const song = 'New Song';
 
-const [, , trunks = 'Not found']: string[] = ['Goku', 'Vegeta'];
+const {song: anotherSong, songDuration: duration, details: {author}} = audioPlayer;
 
-console.log('Personaje 3: ', trunks);
+// console.log('Song:', anotherSong, duration, author);
 
+const dbz: string[] = ['Goku', 'Vegeta', 'Trunks'];
 
+console.log('Personaje 3', dbz[2]);
 
-export { };
+export {};
