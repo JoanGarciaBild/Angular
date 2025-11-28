@@ -26,8 +26,8 @@ const {song: anotherSong, songDuration: duration, details: {author}} = audioPlay
 
 // console.log('Song:', anotherSong, duration, author);
 
-const dbz: string[] = ['Goku', 'Vegeta', 'Trunks'];
+const [, , trunks = 'Not Found']: string [] = ['Goku', 'Vegeta'];
 
-console.log('Personaje 3', dbz[2]);
+console.error('Personaje #3: ', trunks);
 
 export {};
