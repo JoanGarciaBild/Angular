@@ -1,6 +1,7 @@
-import { Component, signal} from '@angular/core';
+import { Component, inject, signal} from '@angular/core';
 import { CharacterListComponent } from '../../components/dragonball/character-list/character-list.component';
 import { CharacterAddComponent } from "../dragonball/character-add/character-add.component";
+import { DragonballService } from '../../services/dragonball.service';
 
 interface Character {
   id: number;
@@ -16,15 +17,6 @@ interface Character {
 
 export class DragonballSuperPageComponent {
 
-  characters = signal<Character[]>([
-    {id:1, name: 'Goky', power: 9001},
-    {id:2, name: 'Vegeta', power: 8000},
-  ]);
-
-  addCharacter(character: Character) {
-    this.characters.update(
-    (list) => [...list, character]
-    )
-  }
+  public dragonballService = inject(DragonballService);
 
 }
